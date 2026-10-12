@@ -1,0 +1,13 @@
+# Changes here will be overwritten by Copier; DO NOT edit manually.
+_commit: v1.3.2
+_src_path: gh:stromy-org/claude-marketplace-template
+author_name: William Masquelier
+client_name: Stromy
+client_slug: stromy
+github_org: stromy-org
+marketplace_name: AU Gov Data Plugin Marketplace
+marketplace_slug: au-gov-data-marketplace
+plugin_description: 'Australian government research inside your own AI tools: Hansard
+    across every parliament, federal legislation, procurement, political finance and
+    statistics, served by the AU Gov Data connector'
+plugin_slug: au-gov-data-plugin

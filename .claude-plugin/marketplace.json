@@ -1,0 +1,22 @@
+{
+  "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
+  "name": "au-gov-data-marketplace",
+  "description": "Plugin marketplace for Stromy plugins",
+  "owner": {
+    "name": "stromy-org"
+  },
+  "plugins": [
+    {
+      "name": "au-gov-data-plugin",
+      "description": "Australian government research inside your own AI tools: Hansard across every parliament, federal legislation, procurement, political finance and statistics, served by the AU Gov Data connector",
+      "version": "0.1.0",
+      "author": {
+        "name": "William Masquelier"
+      },
+      "source": {
+        "source": "url",
+        "url": "https://github.com/stromy-org/au-gov-data-plugin.git"
+      }
+    }
+  ]
+}
