@@ -14,8 +14,8 @@ Public marketplace for Stromy Claude Code plugins.
 
 1. Open **Settings → Plugins** (or **Connectors & plugins**)
 2. **Add marketplace** → enter `stromy-org/au-gov-data-marketplace`
-3. Click **Stromy** → **Install**
-4. In **Settings → Connectors**, switch on the connectors the plugin declares in its `.mcp.json`
+3. Click **AU Gov Data by Stromy** → **Install**
+4. In **Settings → Connectors**, add the **AU Gov Data** custom connector and sign in (the plugin's `au-setup` skill walks you through it)
 
 ### Option B: From the CLI
 
@@ -24,13 +24,13 @@ Public marketplace for Stromy Claude Code plugins.
 claude plugin marketplace add stromy-org/au-gov-data-marketplace
 
 # Install plugin
-claude plugin install au-gov-data-plugin@au-gov-data-marketplace
+claude plugin install au-gov-data@au-gov-data-marketplace
 ```
 
 ### Post-install: dependencies (one-time)
 
 ```bash
-cd ~/.claude/plugins/cache/au-gov-data-marketplace/au-gov-data-plugin/<version>
+cd ~/.claude/plugins/cache/au-gov-data-marketplace/au-gov-data/<version>
 npm install   # if the plugin has Node dependencies
 uv sync       # if the plugin has Python dependencies
 ```
@@ -48,12 +48,14 @@ uv sync       # if the plugin has Python dependencies
 <!-- Update this table after adding skills to the plugin -->
 | Skill | Command |
 |-------|---------|
-| _example_ | `/au-gov-data-plugin:example` |
+| au-setup | `/au-gov-data:au-setup` — add the connector, sign in, confirm it works |
+| au-guide | `/au-gov-data:au-guide` — what to ask for and what the Hansard corpus can do |
+| au-gov-data | `/au-gov-data:au-gov-data` — the research workflow, one question across the record |
 
 ## Updating
 
 ```bash
-claude plugin update au-gov-data-plugin@au-gov-data-marketplace
+claude plugin update au-gov-data@au-gov-data-marketplace
 ```
 
 ## Troubleshooting
@@ -69,6 +71,6 @@ claude plugin update au-gov-data-plugin@au-gov-data-marketplace
 ## Architecture
 
 - **Marketplace** (this repo): public — hosts `marketplace.json` only
-- **Plugin** (`au-gov-data-plugin`): public — contains skills, brand data, company info
+- **Plugin** (`au-gov-data-plugin`): public — contains the skills; no client brand data
 - **Source format**: use `"source": "url"` with an explicit HTTPS clone URL ending in `.git`, for example `https://github.com/stromy-org/au-gov-data-plugin.git`
 - **Why not `github` shorthand?** Anthropic supports it, but Claude Code can resolve it to SSH (`git@github.com:...`) and fail on machines without a configured GitHub SSH key. Explicit HTTPS is the org portability standard.

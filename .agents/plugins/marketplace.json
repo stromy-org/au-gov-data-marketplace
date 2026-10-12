@@ -1,0 +1,20 @@
+{
+  "name": "au-gov-data-marketplace",
+  "interface": {
+    "displayName": "AU Gov Data by Stromy"
+  },
+  "plugins": [
+    {
+      "name": "au-gov-data",
+      "source": {
+        "source": "url",
+        "url": "https://github.com/stromy-org/au-gov-data-plugin.git",
+        "ref": "codex"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      }
+    }
+  ]
+}
